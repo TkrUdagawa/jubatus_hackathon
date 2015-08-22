@@ -24,9 +24,9 @@ with open(sys.argv[1], "r") as f:
                 else:
                     d.add_string(key, feed[key].encode('utf-8'))
             except TypeError:
-                print(key, " ".join(feed[key]))
+                print("ignore", key, " ".join(feed[key]))
             except AttributeError:
-                print("hoge")
+                print("ignore", key, feed[key])
         client.update_row(article_id, d)
     res = client.similar_row_from_id(article_id, 10)
     client.save("jubatus_hackathon")
