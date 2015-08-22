@@ -15,7 +15,6 @@ with open(sys.argv[1], "r") as f:
         for key in keys:
             try: 
                 if key == "article":
-                    continue
                     d.add_string(key, " ".join(feed[key]))
                 elif key == "NewsItemId":
                     article_id = feed[key].encode('utf-8')
